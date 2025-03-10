@@ -1,0 +1,20 @@
+// Function to check speed and calculate demerit points
+function checkSpeed(speed) {
+  const speedLimit = 70;
+  const kmPerPoint = 5;
+  
+  // If speed is less than or equal to the limit, print "Ok"
+  if (speed <= speedLimit) {
+    return "Ok";
+  }
+  
+  // Calculate demerit points
+  const demeritPoints = Math.floor((speed - speedLimit) / kmPerPoint);
+  
+  // Check if license should be suspended
+  if (demeritPoints > 12) {
+    return "License suspended";
+  } else {
+    return "Points: " + demeritPoints;
+  }
+}
