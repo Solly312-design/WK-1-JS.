@@ -1,0 +1,31 @@
+// Function to generate a grade based on student marks
+function generateGrade(marks) {
+  // Valid input is between 0 and 100
+  if (marks < 0 || marks > 100 || isNaN(marks)) {
+    return "Invalid input. Marks must be between 0 and 100.";
+  }
+  
+  // Determine the grade based on the marks
+  if (marks > 79) {
+    return "A";
+  } else if (marks >= 60) {
+    return "B";
+  } else if (marks >= 49) {
+    return "C";
+  } else if (marks >= 40) {
+    return "D";
+  } else {
+    return "E";
+  }
+}
+
+// Function that prompts the user for marks and returns the grade
+function studentGradeGenerator() {
+  const userInput = prompt("Enter student marks (0-100):");
+  const marks = parseFloat(userInput);
+  const grade = generateGrade(marks);
+  
+  // Display the result
+  alert(`Student Grade: ${grade}`);
+  return grade;
+}
